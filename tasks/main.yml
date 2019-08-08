@@ -1,9 +1,4 @@
 ---
-- name: "Install Grafana repository"
-  - role: grafana-repo
-#  yum: name=https://grafanarel.s3.amazonaws.com/builds/grafana-2.6.0-1.x86_64.rpm state=present
-#  become: yes
-
 - name: "Install Grafana server"
   yum: name=grafana state=present
   become: yes
