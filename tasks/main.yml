@@ -1,6 +1,9 @@
 ---
 - name: "Install Grafana server"
-  yum: name=grafana state=present
+  yum:
+    name: grafana
+    enablerepo: grafana
+    state: present
   become: yes
 
 - name: "Start and enable grafana-server"
