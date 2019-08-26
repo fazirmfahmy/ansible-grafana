@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: "grafana"
-  author: "Author"
+  author: "Fazir Fahmy"
   description: "Install Grafana server"
   company: "Company"
   license: "License"

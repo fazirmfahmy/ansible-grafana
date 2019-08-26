@@ -1,0 +1,14 @@
+---
+- name: "Install Grafana server "
+  yum:
+    name: grafana
+    enablerepo: grafana
+    state: present
+  notify:
+    restart prometheus
+  become: yes
+
+- name: "Start and enable grafana-server"
+  service: name=grafana-server state=started enabled=yes
+  become: yes
+

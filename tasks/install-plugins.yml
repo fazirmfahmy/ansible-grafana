@@ -1,0 +1,15 @@
+---
+- name: "Install plugins"
+  grafana_plugin:
+    name: {{ item }}
+    with_items:
+      - vonage-status-panel
+    version: latest
+    state: presen
+  notify:
+    - restart grafana-server
+
+#    service: name={{ item }} state=restarted
+    #       with_items:
+    #         - zabbix-server
+    #         - zabbix-proxy

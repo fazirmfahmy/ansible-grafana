@@ -1,24 +1,8 @@
 ---
-- name: "Install Grafana server"
-  yum:
-    name: grafana
-    enablerepo: grafana
-    state: present
-  become: yes
+- name: "Install Grafana Server."
+  import_tasks: install-grafana.yml
+  when: server_install_status
 
-- name: "Start and enable grafana-server"
-  service: name=grafana-server state=started enabled=yes
-  become: yes
-
-- name: "Install plsuings"
-  grafana_plugin:
-    name: {{ item }}
-    with_items:
-      - vonage-status-panel
-    version: latest
-    state: presen
-
-    service: name={{ item }} state=restarted
-    #       with_items:
-    #         - zabbix-server
-    #         - zabbix-proxy
+- name: "Install plugins."
+  import_tasks: install-plugins.yml
+  when: plugins_install_status
