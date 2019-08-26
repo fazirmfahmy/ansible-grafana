@@ -1,7 +1,7 @@
 ---
 - name: "Install plugins"
   grafana_plugin:
-    name: {{ item }}
+    name: "{{ item }}"
     with_items:
       - vonage-status-panel
     version: latest
