@@ -1,0 +1,6 @@
+---
+- name: "Check if Grafana console is accessible."
+  uri:
+    url: http://127.0.0.1:3000
+    method: GET
+    status_code: 200
