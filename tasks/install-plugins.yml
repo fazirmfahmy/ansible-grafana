@@ -4,6 +4,7 @@
     name: "{{ item }}"
     with_items:
       - vonage-status-panel
+      - test
     version: latest
     state: presen
   notify:
